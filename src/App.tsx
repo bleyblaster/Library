@@ -61,7 +61,7 @@ function App() {
   </nav>
   <div className="container mt-3">
      <Switch>
-        <Route exact path={["/","/Library"]}  render={()=> <Library addBookWish={addBookWish} WishBook={books} />} />
+        <Route exact path={["/","/Library"]}  render={()=> <Library addBookWish={addBookWish} />} />
      </Switch>
   </div>
   </div>

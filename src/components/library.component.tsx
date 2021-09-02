@@ -8,11 +8,11 @@ import {IDocLibrary,ILibrary, ILibraryWish} from "../types/library.type";
 
 interface BookWishProps{
     addBookWish( wish:ILibraryWish):void
-    WishBook: ILibraryWish[]
+   
 }
 
 
-export const Library: React.FC<BookWishProps> = ({addBookWish, WishBook}) =>{
+export const Library: React.FC<BookWishProps> = ({addBookWish}) =>{
     const [searchTitle, setSearchTitle] = React.useState(String)
     const [librarys, setLibrarys] = React.useState<ILibrary>({
         start:0,
