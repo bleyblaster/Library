@@ -149,7 +149,7 @@ export const Library: React.FC<BookWishProps> = ({addBookWish}) =>{
                             <div>
                                 <label>
                                     <strong>Authors:</strong>
-                                    {" "} {CurrentSeleted.author_name.join(", ")}
+                                    {" "} {CurrentSeleted.author_name === undefined?CurrentSeleted.author_name: CurrentSeleted.author_name.join(", ")}
                                 </label>
                             </div>
                             <div>

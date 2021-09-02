@@ -24,7 +24,7 @@ export const WishListContainer: React.FC<wishListsProp> = ({books,deleteWishBook
         // public_scan_b:false,
         // isWished:false
         // })
-        const [confirmation,Setconfirmation] = useState(false)
+
 
     // const onCurrentSelected = (booksSeleted: any, index:number) =>{
     //     setCurrentSeleted(booksSeleted)
@@ -32,8 +32,8 @@ export const WishListContainer: React.FC<wishListsProp> = ({books,deleteWishBook
 
     // }
     const removeFromWishList = (wish: ILibraryWish,index: number)=>{
-       Setconfirmation( window.confirm("Are you sure?"))
-       if(!confirmation){
+      const confirmac:boolean =  window.confirm("Are you sure?")
+       if(confirmac){
          deleteWishBook(wish)
          alert("element deleted")
        }
@@ -54,7 +54,7 @@ export const WishListContainer: React.FC<wishListsProp> = ({books,deleteWishBook
                     <Modal.Body>
                         {
                             books.map((wish:ILibraryWish, index:number) =>(
-                            <li className="list-group-item"> <span onClick={ ()=> { removeFromWishList(wish,index);} } className="fas fa-trash"></span> Title: <strong><u>{wish.title}</u> </strong>- Author: <strong>{wish.author_name === undefined?wish.author_name:wish.author_name.join(', ')}</strong> </li>
+                            <li className="list-group-item" key={wish.key}> <span onClick={ ()=> { removeFromWishList(wish,index);} } className="fas fa-trash"></span> Title: <strong><u>{wish.title}</u> </strong>- Author: <strong>{wish.author_name === undefined?wish.author_name:wish.author_name.join(', ')}</strong> </li>
                                 ))
                         }
                     </Modal.Body>
